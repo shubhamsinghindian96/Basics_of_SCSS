@@ -1,11 +1,130 @@
+// @import "mixins";
+// @import "variables";
+
+/*
+    SCSS is the pre-processor of CSS.
+
+     Note: We have to use LIVE SCSS COMPILER to compile scss into css because browser 
+          only understand css code.
+
+    Features of SCSS
+    ================
+
+    01. We can use Arithmetic Operations in scss like + - * /
+    02. We can use styles nesting in scss
+    03. We can use styles as a variable in scss
+    04. We can use Mixins with or without parameters for css code reusability and for dynamic styles also
+    05. We can use partials to manage scss code efficiently 
+   
+*/
+// ================================================================================
+
+// CSS RESET
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.container {
+
+// SCSS VARIABLES
+$background_color: rgb(94, 214, 98);
+
+// SCSS MIXINS = To reduce code and to set values dynamically
+@mixin flexDefaultProperty($dynamicWidth) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: $dynamicWidth; // Dynamically paas width value
+  margin: 0 auto;
+}
+
+@mixin dynamic_Width_Margin_Padding_And_Border(
+  $width,
+  $margin,
+  $padding,
+  $border
+) {
+  width: $width;
+  margin: $margin;
+  padding: $padding;
+  border: $border;
+}
+
+header {
+  // SCSS NESTING
   h1 {
     text-align: center;
     color: green;
+    @include dynamic_Width_Margin_Padding_And_Border(
+      80%,
+      20px auto,
+      20px,
+      5px solid yellow
+    );
+    &:hover {
+      color: magenta;
+      @include dynamic_Width_Margin_Padding_And_Border(
+        50%,
+        10px auto,
+        30px,
+        5px solid cyan
+      );
+    }
   }
+  h2 {
+    text-align: center;
+    color: blue;
+  }
+}
+
+#profile_details {
+  background-color: $background_color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 50% + 25%; // SCSS ARITHMETIC OPERATIONS
+  padding: 100px - 80px; // SCSS ARITHMETIC OPERATIONS
+  margin: 10 * 2px auto; // SCSS ARITHMETIC OPERATIONS
+  border: 5-2px solid black; // SCSS ARITHMETIC OPERATIONS
+
+  // NESTING
+  &:hover {
+    border: 5px dotted blue;
+  }
+
+  h1 {
+    color: white;
+    background-color: rgb(15, 224, 151);
+
+    // SCSS DEEP NESTING - NO Need to use h1 tagname again and again. We can use & operator.
+    &:hover {
+      color: red;
+      background-color: white;
+    }
+  }
+  h2:hover {
+    font-size: 50px;
+  }
+  h3 {
+    &::after {
+      content: " 160070";
+    }
+    // Add AFTER WITH HOVER
+    &:hover {
+      &::after {
+        content: ", 160071";
+      }
+      font-size: 65px;
+    }
+  }
+}
+
+footer {
+  // Using Mixins here to fetch flex default properties which we defined above.
+  @include flexDefaultProperty(50%);
+  border: 1px solid black;
+  padding: 15px;
 }

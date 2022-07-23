@@ -1,10 +1,86 @@
+/*
+    SCSS is the pre-processor of CSS.
+
+     Note: We have to use LIVE SCSS COMPILER to compile scss into css because browser 
+          only understand css code.
+
+    Features of SCSS
+    ================
+
+    01. We can use Arithmetic Operations in scss like + - * /
+    02. We can use styles nesting in scss
+    03. We can use styles as a variable in scss
+    04. We can use Mixins with or without parameters for css code reusability and for dynamic styles also
+    05. We can use partials to manage scss code efficiently 
+
+*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container h1 {
+header h1 {
   text-align: center;
   color: green;
-} /*# sourceMappingURL=index.css.map */
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 5px solid yellow;
+}
+header h1:hover {
+  color: magenta;
+  width: 50%;
+  margin: 10px auto;
+  padding: 30px;
+  border: 5px solid cyan;
+}
+header h2 {
+  text-align: center;
+  color: blue;
+}
+
+#profile_details {
+  background-color: rgb(94, 214, 98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  padding: 20px;
+  margin: 20px auto;
+  border: 3px solid black;
+}
+#profile_details:hover {
+  border: 5px dotted blue;
+}
+#profile_details h1 {
+  color: white;
+  background-color: rgb(15, 224, 151);
+}
+#profile_details h1:hover {
+  color: red;
+  background-color: white;
+}
+#profile_details h2:hover {
+  font-size: 50px;
+}
+#profile_details h3::after {
+  content: " 160070";
+}
+#profile_details h3:hover {
+  font-size: 65px;
+}
+#profile_details h3:hover::after {
+  content: ", 160071";
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 15px;
+}/*# sourceMappingURL=index.css.map */

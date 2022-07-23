@@ -1,0 +1,21 @@
+// SCSS MIXINS = To reduce code and to set values dynamically
+
+@mixin flexDefaultProperty($dynamicWidth) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: $dynamicWidth; // Dynamically paas width value
+  margin: 0 auto;
+}
+
+@mixin dynamic_Width_Margin_Padding_And_Border(
+  $width,
+  $margin,
+  $padding,
+  $border
+) {
+  width: $width;
+  margin: $margin;
+  padding: $padding;
+  border: $border;
+}

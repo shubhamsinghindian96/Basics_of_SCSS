@@ -8,8 +8,34 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
+    <header>
       <h1>Welcome to SCSS Tutorial 2022</h1>
-    </div>
+      <h2>
+        SCSS is the preprocessor of CSS or we can say that SCSS provide the
+        super power to css.
+      </h2>
+    </header>
+    <section id="profile_details">
+      <h1>My Name is Shubham Singh</h1>
+      <h2>I am 26 years old</h2>
+      <h3>I am living in Mohali, Punjab</h3>
+      <h4>My Hometown is in Dehradun, Uttarakhand</h4>
+      <h5>
+        I completed my Graduation in B.Sc. I.T in 2017 from SGRRITS, Dehradun
+        (Uttarakhand)
+      </h5>
+    </section>
+    <footer>
+      <h3>SCSS Tutorial</h3>
+      <h4>Created & Maintained by Shubham Singh</h4>
+      <h4>All Rights are reserved - <span id="fullYear"></span></h4>
+    </footer>
+
+    <script>
+      // Added Full Year in Footer Section
+      const fullYear = new Date().getFullYear();
+      const fullYearElement = document.getElementById("fullYear");
+      fullYearElement.innerText = fullYear;
+    </script>
   </body>
 </html>

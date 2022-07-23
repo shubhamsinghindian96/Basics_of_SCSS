@@ -1,5 +1,5 @@
-// @import "mixins";
-// @import "variables";
+@import "mixins";
+@import "variables";
 
 /*
     SCSS is the pre-processor of CSS.
@@ -28,28 +28,28 @@
 }
 
 // SCSS VARIABLES
-$background_color: rgb(94, 214, 98);
+// $background_color: rgb(94, 214, 98);
 
 // SCSS MIXINS = To reduce code and to set values dynamically
-@mixin flexDefaultProperty($dynamicWidth) {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: $dynamicWidth; // Dynamically paas width value
-  margin: 0 auto;
-}
+// @mixin flexDefaultProperty($dynamicWidth) {
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   width: $dynamicWidth; // Dynamically paas width value
+//   margin: 0 auto;
+// }
 
-@mixin dynamic_Width_Margin_Padding_And_Border(
-  $width,
-  $margin,
-  $padding,
-  $border
-) {
-  width: $width;
-  margin: $margin;
-  padding: $padding;
-  border: $border;
-}
+// @mixin dynamic_Width_Margin_Padding_And_Border(
+//   $width,
+//   $margin,
+//   $padding,
+//   $border
+// ) {
+//   width: $width;
+//   margin: $margin;
+//   padding: $padding;
+//   border: $border;
+// }
 
 header {
   // SCSS NESTING
